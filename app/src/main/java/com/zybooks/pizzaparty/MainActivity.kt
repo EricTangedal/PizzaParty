@@ -1,3 +1,17 @@
+/****************************************************
+ * AUTHOR: Eric A Tangedal
+ * COURSE: CS 134: Mobile App Development (Kotlin)
+ * SECTION: 1351 Online
+ * LAB #: Lab 1
+ * LAST MODIFIED: 2/15/2023
+ *****************************************************/
+/*****************************************************************************
+ * PizzaParty
+ *****************************************************************************
+ * PROGRAM DESCRIPTION:
+ * Determines how many pizzas are needed for a party based off the amount of
+ * people attending and how hungry they are.
+ *****************************************************************************/
 // Package name
 package com.zybooks.pizzaparty
 
