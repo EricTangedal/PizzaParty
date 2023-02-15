@@ -2,8 +2,10 @@
 package com.zybooks.pizzaparty
 
 // Imported libraries
+import android.content.res.Resources
 import android.os.Bundle
 import android.view.View
+//import android.view.View
 import android.widget.EditText
 import android.widget.RadioGroup
 import android.widget.TextView
@@ -27,7 +29,7 @@ class MainActivity : AppCompatActivity() {
         howHungryRadioGroup = findViewById(R.id.hungry_radio_group)
     }
     // Create a function to calculate the total pizzas needed based off the radio button selection
-    fun calculateClick(view: View) {
+    fun calculateClick(view : View) {
 
         // Get the text that was typed into the EditText
         val numAttendStr = numAttendEditText.text.toString()
@@ -46,6 +48,6 @@ class MainActivity : AppCompatActivity() {
         // Calculate and show the number of pizzas needed
         val totalPizzas = ceil(numAttend * slicesPerPerson / SLICES_PER_PIZZA.toDouble()).toInt()
         // @return the amount of total pizzas.
-        numPizzasTextView.text = "Total pizzas: $totalPizzas"
+        numPizzasTextView.text = getString(R.string.newTotalPizzas, totalPizzas)
     }
 }
