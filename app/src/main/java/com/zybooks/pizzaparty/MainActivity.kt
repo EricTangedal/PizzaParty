@@ -1,5 +1,7 @@
+// Package name
 package com.zybooks.pizzaparty
 
+// Imported libraries
 import android.os.Bundle
 import android.view.View
 import android.widget.EditText
@@ -8,6 +10,7 @@ import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import kotlin.math.ceil
 
+// Declares and initializes a constant for the amount of slices per pizza.
 const val SLICES_PER_PIZZA = 8
 
 class MainActivity : AppCompatActivity() {
@@ -23,7 +26,7 @@ class MainActivity : AppCompatActivity() {
         numPizzasTextView = findViewById(R.id.num_pizzas_text_view)
         howHungryRadioGroup = findViewById(R.id.hungry_radio_group)
     }
-
+    // Create a function to calculate the total pizzas needed based off the radio button selection
     fun calculateClick(view: View) {
 
         // Get the text that was typed into the EditText
@@ -33,6 +36,7 @@ class MainActivity : AppCompatActivity() {
         val numAttend = numAttendStr.toInt()
 
         // Determine how many slices on average each person will eat
+        // @param howHungryRadioGroup.checkedRadioButtonId radio buttons mapped with integer values
         val slicesPerPerson = when (howHungryRadioGroup.checkedRadioButtonId) {
             R.id.light_radio_button -> 2
             R.id.medium_radio_button -> 3
@@ -41,6 +45,7 @@ class MainActivity : AppCompatActivity() {
 
         // Calculate and show the number of pizzas needed
         val totalPizzas = ceil(numAttend * slicesPerPerson / SLICES_PER_PIZZA.toDouble()).toInt()
+        // @return the amount of total pizzas.
         numPizzasTextView.text = "Total pizzas: $totalPizzas"
     }
 }
