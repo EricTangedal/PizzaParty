@@ -3,15 +3,9 @@
  * COURSE: CS 134: Mobile App Development (Kotlin)
  * SECTION: 1351 Online
  * LAB #: Lab 1
- * LAST MODIFIED: 2/15/2023
- *****************************************************/
-/*****************************************************************************
- * PizzaParty
- *****************************************************************************
- * PROGRAM DESCRIPTION:
- * Determines how many pizzas are needed for a party based off the amount of
- * people attending and how hungry they are.
- *****************************************************************************/
+ * TITLE: PizzaParty
+ * LAST MODIFIED: 2/20/2023
+ ****************************************************/
 // Package name
 package com.zybooks.pizzaparty
 
@@ -23,16 +17,28 @@ import android.widget.RadioGroup
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import kotlin.math.ceil
-
-// Declares and initializes a constant for the amount of slices per pizza.
+/**
+ * Declares and initializes a constant for the amount of slices per pizza.
+ * @param SLICES_PER_PIZZA stores the standard amount of slices per pizza.
+ * @return 8
+ */
 const val SLICES_PER_PIZZA = 8
-
+/**
+ * This class is used to calculate the total number of pizzas needed for a pizza party,
+ * based off the number of people attending, how hungry they are, and how many slices per pizza.
+ * It creates a user interface with text boxes and radio buttons.
+ * @return totalPizzas
+ */
 class MainActivity : AppCompatActivity() {
-
     private lateinit var numAttendEditText: EditText
     private lateinit var numPizzasTextView: TextView
     private lateinit var howHungryRadioGroup: RadioGroup
-
+    /**
+     * Creates and display layout and content using resources.
+     * @param numAttendEditText an editable text box.
+     * @param numPizzasTextView an uneditable text box.
+     * @param howHungryRadioGroup a group of radio buttons.
+     */
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -40,26 +46,24 @@ class MainActivity : AppCompatActivity() {
         numPizzasTextView = findViewById(R.id.num_pizzas_text_view)
         howHungryRadioGroup = findViewById(R.id.hungry_radio_group)
     }
-    // Create a function to calculate the total pizzas needed based off the radio button selection
+    /**
+     * Calculates and displays totalPizzas when the "Calculate" button is clicked
+     * using numAttend, slicesPerPerson, and SLICES_PER_PIZZA.
+     * @param numAttendStr get text from numAttendEditText.
+     * @param numAttend convert and store int value of numAttendStr
+     * @param slicesPerPerson get int value from how hungry radio button selection.
+     * @param totalPizzas calculates total pizzas needed for party.
+     * @return totalPizzas in numPizzasTextView
+     */
     fun calculateClick(view : View) {
-
-        // Get the text that was typed into the EditText
         val numAttendStr = numAttendEditText.text.toString()
-
-        // Convert the text into an integer
         val numAttend = numAttendStr.toInt()
-
-        // Determine how many slices on average each person will eat
-        // @param howHungryRadioGroup.checkedRadioButtonId radio buttons mapped with integer values
         val slicesPerPerson = when (howHungryRadioGroup.checkedRadioButtonId) {
             R.id.light_radio_button -> 2
             R.id.medium_radio_button -> 3
             else -> 4
         }
-
-        // Calculate and show the number of pizzas needed
         val totalPizzas = ceil(numAttend * slicesPerPerson / SLICES_PER_PIZZA.toDouble()).toInt()
-        // @return the amount of total pizzas.
         numPizzasTextView.text = getString(R.string.newTotalPizzas, totalPizzas)
     }
 }
