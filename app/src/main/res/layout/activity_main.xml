@@ -5,24 +5,25 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:paddingBottom="16dp"
-    android:paddingLeft="16dp"
-    android:paddingRight="16dp"
-    android:paddingTop="16dp"
+    android:paddingBottom="@dimen/padding_default"
+    android:paddingLeft="@dimen/padding_default"
+    android:paddingRight="@dimen/padding_default"
+    android:paddingTop="@dimen/padding_default"
+    android:background = "@drawable/bg"
     tools:context="com.zybooks.pizzaparty.MainActivity">
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/numPeople"
-        android:textSize="24sp"
+        android:textSize="@dimen/font_size"
         android:labelFor="@id/num_attend_edit_text" />
 
     <EditText
         android:id="@+id/num_attend_edit_text"
         android:layout_width="wrap_content"
-        android:layout_height="68dp"
-        android:ems="5"
+        android:layout_height="@dimen/edit_text_layout_height"
+        android:ems="@dimen/edit_text_ems"
         android:hint="@string/hint"
         android:importantForAutofill="no"
         android:inputType="number" />
@@ -30,9 +31,9 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="@dimen/margin_top"
         android:text="@string/howHungry"
-        android:textSize="24sp"
+        android:textSize="@dimen/font_size"
         android:labelFor="@id/hungry_radio_group" />
 
     <RadioGroup
@@ -63,14 +64,14 @@
         android:text="@string/totalPizzas"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:textSize="24sp"/>
+        android:layout_marginTop="@dimen/margin_top"
+        android:textSize="@dimen/font_size"/>
 
     <Button
         android:id="@+id/calc_button"
         android:text="@string/calculate"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="@dimen/margin_top"
         android:onClick="calculateClick" />
 </LinearLayout>
