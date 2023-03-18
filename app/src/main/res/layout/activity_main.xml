@@ -80,7 +80,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/margin_top"
-        style="@style/Widget.AppCompat.ImageButton"
-        android:background="@drawable/bg3"
+        android:textSize="@dimen/font_size"
+        style="@style/Widget.AppCompat.Button.Borderless.Colored"
+        android:textColor="@color/aquamarine"
         android:onClick="calculateClick" />
 </LinearLayout>
