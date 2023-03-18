@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <dimen name = "font_size">24sp</dimen>
+    <dimen name = "font_size">30sp</dimen>
+    <dimen name = "font_size2">22sp</dimen>
     <dimen name = "margin_top">20dp</dimen>
     <dimen name = "edit_text_ems">5</dimen>
     <dimen name = "edit_text_layout_height">68dp</dimen>

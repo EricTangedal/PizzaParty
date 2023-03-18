@@ -9,7 +9,7 @@
     android:paddingLeft="@dimen/padding_default"
     android:paddingRight="@dimen/padding_default"
     android:paddingTop="@dimen/padding_default"
-    android:background = "@drawable/bg"
+    android:background = "@drawable/bg2"
     tools:context="com.zybooks.pizzaparty.MainActivity">
 
     <TextView
@@ -17,6 +17,7 @@
         android:layout_height="wrap_content"
         android:text="@string/numPeople"
         android:textSize="@dimen/font_size"
+        android:textColor="@color/black"
         android:labelFor="@id/num_attend_edit_text" />
 
     <EditText
@@ -26,6 +27,7 @@
         android:ems="@dimen/edit_text_ems"
         android:hint="@string/hint"
         android:importantForAutofill="no"
+        android:textSize="@dimen/font_size2"
         android:inputType="number" />
 
     <TextView
@@ -34,6 +36,7 @@
         android:layout_marginTop="@dimen/margin_top"
         android:text="@string/howHungry"
         android:textSize="@dimen/font_size"
+        android:textColor="@color/black"
         android:labelFor="@id/hungry_radio_group" />
 
     <RadioGroup
@@ -45,17 +48,20 @@
             android:id="@+id/light_radio_button"
             android:text="@string/light"
             android:layout_width="wrap_content"
+            android:textSize="@dimen/font_size2"
             android:layout_height="wrap_content" />
         <RadioButton
             android:id="@+id/medium_radio_button"
             android:text="@string/medium"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:textSize="@dimen/font_size2"
             android:checked="true" />
         <RadioButton
             android:id="@+id/ravenous_radio_button"
             android:text="@string/ravenous"
             android:layout_width="wrap_content"
+            android:textSize="@dimen/font_size2"
             android:layout_height="wrap_content" />
     </RadioGroup>
 
@@ -65,7 +71,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/margin_top"
-        android:textSize="@dimen/font_size"/>
+        android:textSize="@dimen/font_size"
+        android:textColor="@color/black"/>
 
     <Button
         android:id="@+id/calc_button"
